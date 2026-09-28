@@ -47,7 +47,7 @@ prose. Avoid file paths that go stale.
 ## Testing
 
 The seams: where tests live, what behavior they verify, prior art in the repo. Behavior
-through public boundaries — the fewer seams the better.
+through public interfaces — the fewer seams the better.
 
 ## Slices
 
