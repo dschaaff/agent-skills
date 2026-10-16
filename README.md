@@ -45,6 +45,7 @@ npx skills add dschaaff/agent-skills
 | `improve-codebase-architecture` | Scan for deepening opportunities, report them, grill one |
 | `find-dead-code` | Audit for removal candidates with evidence and confidence ratings |
 | `playwright-cli` | Drive a browser for testing and extraction |
+| `codex` | Run Codex reviews, adversarial reviews, and delegated tasks through `codex exec` |
 | `writing-for-agents` | Reference for writing skills, AGENTS.md, and CLAUDE.md |
 
 ## Development
