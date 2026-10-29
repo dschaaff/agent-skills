@@ -13,7 +13,7 @@ When exploring the codebase, read `CONTEXT.md` (if it exists) so test names and 
 
 Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: "user can checkout with valid cart" tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.
 
-See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+Before writing a test body, read [tests.md](tests.md): naming the break a test catches, examples, and the mutation check. Before adding a mock, fake, or test-only helper, read [mocking.md](mocking.md).
 
 ## Seams: where tests go
 
@@ -23,7 +23,7 @@ A **seam** is the interface where you observe behavior without reaching inside. 
 
 Ask: "What's the public interface, and which seams should we test?"
 
-When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
+When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run. A test that is hard to write is the same signal: huge setup or a mock for every collaborator means the interface is too complicated or the module too coupled. Fix the design, not the test.
 
 ## Anti-patterns
 
@@ -34,5 +34,8 @@ When the shape of that interface is itself in question (how deep the module is, 
 ## Rules of the loop
 
 - **Red before green.** Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.
+- **Watch it fail for the right reason.** Run the test and read the failure before writing code. It fails on an assertion because the behavior is missing, not with an error from a typo or a bad import. A test that passes at once tests behavior that already exists: fix the test.
+- **Green means the whole suite.** Once the new test passes, run the project's full test command, not only the file you touched. The output is clean: no errors, no warnings. Report every failure by name, including ones you did not cause.
+- **Bugs start red.** A bug fix starts with a test that reproduces the bug and fails before you change the code.
 - **One slice at a time.** One seam, one test, one minimal implementation per cycle.
 - **Refactoring is not part of the loop.** It belongs to the review stage (call the Skill tool with "verify"), not the red → green implementation cycle.
