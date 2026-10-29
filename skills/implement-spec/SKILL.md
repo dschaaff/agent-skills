@@ -6,7 +6,7 @@ description: REQUIRED whenever implementing work described by a spec file in doc
 # Implement Spec
 
 Implement work described by the user in the spec. The spec file is where requirements, progress markers, and parked findings all live.
-Use /tdd where possible, at pre-agreed seams.
+Use the tdd Skill tool call where possible, at pre-agreed seams.
 
 Check your work after each slice.
 
