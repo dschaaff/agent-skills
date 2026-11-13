@@ -25,24 +25,7 @@ Use this template for the merge request body:
 <details>
 <summary>Full description — <model name and effort></summary>
 
-## Summary
-
-<the smallest diagram, diff-sketch, or tree that makes the key point>
-
-## Evidence
-
-- **Before:** <screenshot / output / failing test run>
-  **After:** <screenshot / output / passing test run>
-
-## Known Gaps
-
-- <what is incomplete> — <why it is not done> — <what would close it>
-
-## Merge Danger
-
-**Door:** <two-way if you can walk it back cheaply, one-way if you cannot>
-
-**Blast Radius:** <one-word description, then what breaks if this is wrong>
+< the full MR description here >
 
 </details>
 ```
